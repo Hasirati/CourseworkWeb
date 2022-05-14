@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRITNERS</title>
+
+    <link rel="stylesheet" href="css/basis.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="css/component.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <form class="Header">
+        <span class="headerFat">MY PRITNERS</span>
+        <button type="button" class="butCreateHeader" onclick=showModal()>
+            Create printer
+        </button>
+        <label for="headerEdit">
+            <input id="headerEdit" class="headerEdit" placeholder="Search your printer">
+        </label>
+        <button class="butSearchHeader">Search</button>
+        <button class="butCancelHeader">Cancel</button>
+    </form>
+
+    <!-- Modal -->
+    <form class="modal" id="modal">
+        <div class="overlay"></div>
+        <div class="modalWindow">
+            <div class="modalHead">
+                <span class="modalTitle">Printer options</span>
+                <button class="butCloseModal">X</button>
+            </div>
+
+            <div class="modalBody">
+                <p>
+                    <label for="name">Printer name<br>
+                        <input id="name" class="modalEdit" placeholder="Enter a name for the printer">
+                    </label>
+                </p>
+                <p>
+                    <label for="size">Maximum paper, size<br>
+                        <select id="size" class="modalEdit">
+                            <option value="A3">A3</option>
+                            <option value="A4">A4</option>
+                            <option value="A5">A5</option>
+                            <option value="A6">A6</option>
+                            <option value="A7">A7</option>
+                            <option value="A8">A8</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label for="speed">Print speed, ppm<br>
+                        <input id="speed" class="modalEdit" placeholder="Enter the print speed, ppm">
+                    </label>
+                </p>
+                <p>
+                    <label for="resource">Cartridge resource, page<br>
+                        <input id="resource" class="modalEdit" placeholder="Enter the cartridge resource, page">
+                    </label>
+                </p>
+                <p>
+                    <img id="modalFile" alt="" src=""><br>
+                    <label for="file">Select image files<br>
+                        <input type="file" class="modalEdit" id="file" accept=".png, .jpg, .jpeg"
+                            onchange=showImageInModal(this)>
+                    </label>
+                </p>
+            </div>
+
+            <div class="modalBut">
+                <button class="butConfirmModal">Confirm</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Menu -->
+    <form class="menu" id="menu">
+        <nav>
+            <ul class="menuNavbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Catalog</a>
+                    <ul class="menuDropDown">
+                        <li><a href="#">Brother</a></li>
+                        <li><a href="#">Canon</a></li>
+                        <li><a href="#">Dell</a></li>
+                        <li><a href="#">Epson</a></li>
+                        <li><a href="#">HP</a></li>
+                        <li><a href="#">Kodak</a></li>
+                        <li><a href="#">Kyocera</a></li>
+                        <li><a href="#">Panasonic</a></li>
+                        <li><a href="#">Polaroid</a></li>
+                        <li><a href="#">Smart Kids</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Menu</a>
+                    <ul class="menuDropDown">
+                        <li><a href="#">Payment</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Return</a></li>
+                        <li><a href="#">Advices</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </nav>
+    </form>
+
+    <!-- Main foto -->
+    <form class="mainFoto">
+        <img src="img/mainFoto.jpg" class="mainFotoImg">
+    </form>
+
+    <!-- Selected printers -->
+    <form class="selectedPrinter">
+        <h1 style="display: none;">Your selected printers</h1>
+    </form>
+
+    <!-- Content -->
+    <form class="content">
+        <h1>Assortment</h1>
+        <form class="contTable">
+            <div class="flex-container">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(1)>
+                        <img class="contImg" src="img/Kodak PD450.jpg">
+                    </button>
+
+                <li data-key="2">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(2)>
+                        <img class="contImg" src="img/Canon i-Sensys.jpg">
+                    </button>
+                </li>
+
+                <li data-key="3">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(3)>
+                        <img class="contImg" src="img/3D FlashForge.png">
+                    </button>
+                </li>
+
+                <li data-key="4">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(4)>
+                        <img class="contImg" src="img/Canon Laser T140.jpg">
+                    </button>
+                </li>
+
+                <li data-key="5">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(5)>
+                        <img class="contImg" src="img/Canon PIXMA G540.jpg">
+                    </button>
+                </li>
+
+                <li data-key="6">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(6)>
+                        <img class="contImg" src="img/Epson L110.jpg">
+                    </button>
+                </li>
+
+                <li data-key="7">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(7)>
+                        <img class="contImg" src="img/Epson L222.jpg">
+                    </button>
+                </li>
+
+                <li data-key="8">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(8)>
+                        <img class="contImg" src="img/Epson L810.jpeg">
+                    </button>
+                </li>
+
+                <li data-key="9">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(9)>
+                        <img class="contImg" src="img/HP Laser 135w.jpg">
+                    </button>
+                </li>
+
+                <li data-key="10">
+                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(10)>
+                        <img class="contImg" src="img/samsung SCX 3405.jpeg">
+                    </button>
+            </div>
+        </form>
+        <form class="compTable" id="compTable">
+            <button type="button" class="overlay" onclick="showContent()"></button>
+            <div class="compContent">
+                <img class="compImg" src="img/Kodak PD450.jpg">
+                <p class="compTitle">Kodak PD-450</p>
+                <p class="compLine">Print technology: Sublimation color printing</p>
+                <p class="compLine">Maximum paper size: 4х6</p>
+                <p class="compLine">Color print speed, ppm: 11</p>
+                <p class="compLine">Cartridge resource, page: 6</p>
+                <!-- <div class="contBut">
+                <button class="contEdit">Edit</button>
+                <button class="contDelete">Delete</button>
+            </div> -->
+            </div>
+        </form>
+    </form>
+
+    <!-- Footer -->
+    <footer>&copyCoursework<br>Shozda Yuliia</footer>
+    <script src="js/basic.js"></script>
+</body>
+
+</html>
