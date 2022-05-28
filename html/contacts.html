@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+
+    <link rel="stylesheet" href="../css/basis.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="../css/component.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <form class="Header">
+        <span class="headerFat">MY PRINTERS</span>
+        <button type="button" class="butCreateHeader" onclick=showModal()>
+            Create printer
+        </button>
+        <label for="headerEdit">
+            <input id="headerEdit" class="headerEdit" placeholder="Search your printer">
+        </label>
+        <button class="butSearchHeader">Search</button>
+        <button class="butCancelHeader">Cancel</button>
+    </form>
+
+    <!-- Modal -->
+    <form class="modal" id="modal">
+        <div class="overlay"></div>
+        <div class="modalWindow">
+            <div class="modalHead">
+                <span class="modalTitle">Printer options</span>
+                <button class="butCloseModal">X</button>
+            </div>
+
+            <div class="modalBody">
+                <p>
+                    <label for="name">Printer name<br>
+                        <input id="name" class="modalEdit" placeholder="Enter a name for the printer">
+                    </label>
+                </p>
+                <p>
+                    <label for="size">Maximum paper, size<br>
+                        <select id="size" class="modalEdit">
+                            <option value="A3">A3</option>
+                            <option value="A4">A4</option>
+                            <option value="A5">A5</option>
+                            <option value="A6">A6</option>
+                            <option value="A7">A7</option>
+                            <option value="A8">A8</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label for="speed">Print speed, ppm<br>
+                        <input id="speed" class="modalEdit" placeholder="Enter the print speed, ppm">
+                    </label>
+                </p>
+                <p>
+                    <label for="resource">Cartridge resource, page<br>
+                        <input id="resource" class="modalEdit" placeholder="Enter the cartridge resource, page">
+                    </label>
+                </p>
+                <p>
+                    <img id="modalFile" alt="" src=""><br>
+                    <label for="file">Select image files<br>
+                        <input type="file" class="modalEdit" id="file" accept=".png, .jpg, .jpeg"
+                            onchange=showImageInModal(this)>
+                    </label>
+                </p>
+            </div>
+
+            <div class="modalBut">
+                <button class="butConfirmModal">Confirm</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Menu -->
+    <form class="menu" id="menu">
+        <nav>
+            <ul class="menuNavbar">
+                <li><a href="../basic.html">Home</a></li>
+                <li><a href="#">Catalog</a>
+                    <ul class="menuDropDownCatalog">
+                        <li><a href="brother.html">Brother</a></li>
+                        <li><a href="canon.html">Canon</a></li>
+                        <li><a href="dell.html">Dell</a></li>
+                        <li><a href="epson.html">Epson</a></li>
+                        <li><a href="hp.html">HP</a></li>
+                        <li><a href="kodak.html">Kodak</a></li>
+                        <li><a href="kyocera.html">Kyocera</a></li>
+                        <li><a href="panasonic.html">Panasonic</a></li>
+                        <li><a href="palaroid.html">Polaroid</a></li>
+                        <li><a href="smartKids.html">Samsung</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Menu</a>
+                    <ul class="menuDropDownMenu">
+                        <li><a href="payment.html">Payment</a></li>
+                        <li><a href="delivery.html">Delivery</a></li>
+                        <li><a href="return.html">Return</a></li>
+                        <li><a href="advices.html">Advices</a></li>
+                        <li><a href="contacts.html">Contacts</a></li>
+                    </ul>
+                </li>
+                <li><a href="aboutUs.html">About us</a></li>
+            </ul>
+        </nav>
+    </form>
+
+    <!-- Content -->
+    <h1 class="h1">Contact information</h1>
+    <form class="content">
+        <div class="imgRight map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5174.214133457117!2d25.63690189212646!3d49.57686930593651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47303162a63761ab%3A0xe42c067aa6eb73cb!2z0KLQtdGF0L3RltGH0L3QuNC5INC60L7Qu9C10LTQtiDQotCd0KLQoyDRltC8LiDQhi4g0J_Rg9C70Y7Rjw!5e0!3m2!1suk!2sua!4v1653512380277!5m2!1suk!2sua"
+                width="900" height="520" style="border: 0;">
+            </iframe>
+        </div>
+        <div class="container">
+            <img src="../img/ikon/location.jpg" class="imgLeft ikon">
+            <span>
+                <h3>Location:</h3>
+                <p>46016, Ukraine<br>Ternopil<br>Lesya Kurbasa 13</p>
+            </span>
+        </div>
+        <div class="container">
+            <img src="../img/ikon/phone.jpg" class="imgLeft ikon">
+            <span>
+                <h3>Telephone:</h3>
+                <p>+380 (12) 345-67-89 - Telegrem<br>+380 (98) 765-43-21 - Viber</p>
+            </span>
+        </div>
+        <div class="container">
+            <img src="../img/ikon/e-mail.jpg" class="imgLeft ikon">
+            <span>
+                <h3>E-MAIL:</h3>
+                <p>MyPrinters@gmail.com<br>printerOnline@gmail.com</p>
+            </span>
+        </div>
+        <div class="container">
+            <img src="../img/ikon/clock.jpg" class="imgLeft ikon">
+            <span>
+                <h3>Working hours:</h3>
+                <p>Mon - Fri: 09:00 to 18:00<br>Sat - Sun: Weekend</p>
+            </span>
+        </div>
+        <div style="clear:both"></div>
+    </form>
+
+    <!-- Footer -->
+    <footer style="margin-top: 30px;">&copyCoursework<br>Shozda Yuliia</footer>
+    <script src="../js/basic.js"></script>
+</body>
+
+</html>

@@ -18,6 +18,7 @@ function showComponent(key) {
     switch (key) {
         case 1:
             document.getElementById("compTable").style.display = "block";
+            console.log(localStorage.getItem(localStorage.setItem('', printerDate.toString())));
             break;
         case 2:
             document.getElementById("compTable").style.display = "block";
@@ -47,4 +48,13 @@ function showComponent(key) {
             document.getElementById("compTable").style.display = "block";
             break;
     }
+}
+
+//LocalStorage
+let printerDate = {
+    name: "Kodak PD-450",
+    printTechnology: "Print technology: Sublimation color printing",
+    maximumPaperSize: "Maximum paper size: 4х6",
+    printSpeed: "Color print speed, ppm: 11",
+    cartridgeResource: "Cartridge resource, page: 6"
 }

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+
+    <link rel="stylesheet" href="../css/basis.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="../css/component.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <form class="Header">
+        <span class="headerFat">MY PRINTERS</span>
+        <button type="button" class="butCreateHeader" onclick=showModal()>
+            Create printer
+        </button>
+        <label for="headerEdit">
+            <input id="headerEdit" class="headerEdit" placeholder="Search your printer">
+        </label>
+        <button class="butSearchHeader">Search</button>
+        <button class="butCancelHeader">Cancel</button>
+    </form>
+
+    <!-- Modal -->
+    <form class="modal" id="modal">
+        <div class="overlay"></div>
+        <div class="modalWindow">
+            <div class="modalHead">
+                <span class="modalTitle">Printer options</span>
+                <button class="butCloseModal">X</button>
+            </div>
+
+            <div class="modalBody">
+                <p>
+                    <label for="name">Printer name<br>
+                        <input id="name" class="modalEdit" placeholder="Enter a name for the printer">
+                    </label>
+                </p>
+                <p>
+                    <label for="size">Maximum paper, size<br>
+                        <select id="size" class="modalEdit">
+                            <option value="A3">A3</option>
+                            <option value="A4">A4</option>
+                            <option value="A5">A5</option>
+                            <option value="A6">A6</option>
+                            <option value="A7">A7</option>
+                            <option value="A8">A8</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label for="speed">Print speed, ppm<br>
+                        <input id="speed" class="modalEdit" placeholder="Enter the print speed, ppm">
+                    </label>
+                </p>
+                <p>
+                    <label for="resource">Cartridge resource, page<br>
+                        <input id="resource" class="modalEdit" placeholder="Enter the cartridge resource, page">
+                    </label>
+                </p>
+                <p>
+                    <img id="modalFile" alt="" src=""><br>
+                    <label for="file">Select image files<br>
+                        <input type="file" class="modalEdit" id="file" accept=".png, .jpg, .jpeg"
+                            onchange=showImageInModal(this)>
+                    </label>
+                </p>
+            </div>
+
+            <div class="modalBut">
+                <button class="butConfirmModal">Confirm</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Menu -->
+    <form class="menu" id="menu">
+        <nav>
+            <ul class="menuNavbar">
+                <li><a href="../basic.html">Home</a></li>
+                <li><a href="#">Catalog</a>
+                    <ul class="menuDropDownCatalog">
+                        <li><a href="brother.html">Brother</a></li>
+                        <li><a href="canon.html">Canon</a></li>
+                        <li><a href="dell.html">Dell</a></li>
+                        <li><a href="epson.html">Epson</a></li>
+                        <li><a href="hp.html">HP</a></li>
+                        <li><a href="kodak.html">Kodak</a></li>
+                        <li><a href="kyocera.html">Kyocera</a></li>
+                        <li><a href="panasonic.html">Panasonic</a></li>
+                        <li><a href="palaroid.html">Polaroid</a></li>
+                        <li><a href="smartKids.html">Samsung</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Menu</a>
+                    <ul class="menuDropDownMenu">
+                        <li><a href="payment.html">Payment</a></li>
+                        <li><a href="delivery.html">Delivery</a></li>
+                        <li><a href="return.html">Return</a></li>
+                        <li><a href="advices.html">Advices</a></li>
+                        <li><a href="contacts.html">Contacts</a></li>
+                    </ul>
+                </li>
+                <li><a href="aboutUs.html">About us</a></li>
+            </ul>
+        </nav>
+    </form>
+
+    <!-- Content -->
+    <h1 class="h1">About us</h1>
+    <form class="content" style="font-size: large;">
+        <h3 class="h3">MyPrinters: a trusted team of print experts</h3>
+        <img src="../img/uboutUs/trustedTeam.jpg" width="400" class="imgRight">
+
+        <p>We know what a good printer is. And we are ready to help you choose.</p>
+        <p>My Printers provides a wide range of options when purchasing printing equipment and alternative printing media. </p>
+        <p>At the same time, with us you can be sure that each of your orders will come to you at the strictly agreed time and you will receive economical printing as quickly as possible.</p>
+        <p>We save not only your money, but also time.</p>
+
+        <div style="clear:both"></div>
+
+        <h3 class="h3">Only the most proven print products</h3>
+        <img src="../img/uboutUs/qualityPrinting.jpg" width="400" class="imgLeft">
+
+        <p>We have been cooperating with major manufacturers of printers and multifunctional devices for a long time. We have earned their trust by creating excellent conditions for our customers who want to receive high-quality printing.</p>
+        <p>This is confirmed by the fact that for many years we have been successfully coping with the role of not only sellers of printing devices, but also offering high quality consumables for them.</p>
+
+        <div style="clear:both"></div>
+
+        <h3 class="h3">Everything you need for work and play</h3>
+        <img src="../img/uboutUs/basePrinters.png" width="400" class="imgRight">
+
+        <p>We have created a huge database of various inkjet printers that can meet any of your requirements.</p>
+        <p>Here are collected both inexpensive offers for study, and professional photo printers and plotters.</p>
+        <p>As printing professionals, we are trusted by major companies such as Epson, Canon and Brother.</p>
+
+        <div style="clear:both"></div>
+
+        <h3 class="h3">Get more out of your printer</h3>
+        <img src="../img/uboutUs/moreForPrinter.jpg" width="400" class="imgLeft">
+
+        <p>We combine the optimal balance of price and quality in our products. 
+        <p>Thus, you will get a high level of creation of any images for a reasonable price.</p>
+        <p>This opportunity for you appears due to the combination of: <br>- a wide variety of different means for saving - ink, PZK and CISS;</p>
+        
+        <h4>- providing you with a guarantee for each of our proposals.</h4>
+
+        <div style="clear:both"></div>
+
+        <h3 class="h3">Really high quality service</h3>
+        <img src="../img/uboutUs/service.jpeg" width="400" class="imgRight">
+
+        <p>The main rule of our company is the client above all else. That is why we have created all the conditions for you to find the printing device that you need with maximum comfort, order its delivery and get a ready-made solution for efficient work in any conditions.</p>
+        <p>Our couriers will deliver your purchase in the city of Ternopil.</p>
+        <p>At every stage, we offer the help of consultants whose main goal is to help you get a truly optimal solution for printing and saving on it.</p>
+        
+        <div style="clear:both"></div>
+
+        <h3 class="h3">Service assistance</h3>
+        <img src="../img/uboutUs/serviceAssistance.jpg" width="400" class="imgLeft">
+        <p>We help solve problems! You can count on us if you need to install ink supply systems on site. We can also set up the outflow of waste ink from printers to your office or home. This opportunity is relevant for customers in Ternopil. We can also carry out these procedures in our service center for buyers from other cities of Ukraine.</p>
+        <p>There is the possibility of a complete installation of the printing device, if you do not have time to carry it out on your own. You get an immediately ready-to-use solution that does not require any waste of time. The professional help of our masters will cost you mere pennies. You can order this service if your office or house is located within the city of Kyiv.</p>
+        <p>Our experience and knowledge will make the purchase and maintenance of the printing device and the means to save money for it as comfortable as possible for you.</p>
+        
+        <div style="clear:both"></div>
+    </form>
+
+    <!-- Footer -->
+    <footer style="margin-top: 10px;">&copyCoursework<br>Shozda Yuliia</footer>
+    <script src="../js/basic.js"></script>
+</body>
+
+</html>

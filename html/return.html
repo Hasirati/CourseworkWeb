@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return</title>
+
+    <link rel="stylesheet" href="../css/basis.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../menu.css">
+    <link rel="stylesheet" href="../css/component.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <form class="Header">
+        <span class="headerFat">MY PRINTERS</span>
+        <button type="button" class="butCreateHeader" onclick=showModal()>
+            Create printer
+        </button>
+        <label for="headerEdit">
+            <input id="headerEdit" class="headerEdit" placeholder="Search your printer">
+        </label>
+        <button class="butSearchHeader">Search</button>
+        <button class="butCancelHeader">Cancel</button>
+    </form>
+
+    <!-- Modal -->
+    <form class="modal" id="modal">
+        <div class="overlay"></div>
+        <div class="modalWindow">
+            <div class="modalHead">
+                <span class="modalTitle">Printer options</span>
+                <button class="butCloseModal">X</button>
+            </div>
+
+            <div class="modalBody">
+                <p>
+                    <label for="name">Printer name<br>
+                        <input id="name" class="modalEdit" placeholder="Enter a name for the printer">
+                    </label>
+                </p>
+                <p>
+                    <label for="size">Maximum paper, size<br>
+                        <select id="size" class="modalEdit">
+                            <option value="A3">A3</option>
+                            <option value="A4">A4</option>
+                            <option value="A5">A5</option>
+                            <option value="A6">A6</option>
+                            <option value="A7">A7</option>
+                            <option value="A8">A8</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label for="speed">Print speed, ppm<br>
+                        <input id="speed" class="modalEdit" placeholder="Enter the print speed, ppm">
+                    </label>
+                </p>
+                <p>
+                    <label for="resource">Cartridge resource, page<br>
+                        <input id="resource" class="modalEdit" placeholder="Enter the cartridge resource, page">
+                    </label>
+                </p>
+                <p>
+                    <img id="modalFile" alt="" src=""><br>
+                    <label for="file">Select image files<br>
+                        <input type="file" class="modalEdit" id="file" accept=".png, .jpg, .jpeg"
+                            onchange=showImageInModal(this)>
+                    </label>
+                </p>
+            </div>
+
+            <div class="modalBut">
+                <button class="butConfirmModal">Confirm</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Menu -->
+    <form class="menu" id="menu">
+        <nav>
+            <ul class="menuNavbar">
+                <li><a href="../basic.html">Home</a></li>
+                <li><a href="#">Catalog</a>
+                    <ul class="menuDropDownCatalog">
+                        <li><a href="brother.html">Brother</a></li>
+                        <li><a href="canon.html">Canon</a></li>
+                        <li><a href="dell.html">Dell</a></li>
+                        <li><a href="epson.html">Epson</a></li>
+                        <li><a href="hp.html">HP</a></li>
+                        <li><a href="kodak.html">Kodak</a></li>
+                        <li><a href="kyocera.html">Kyocera</a></li>
+                        <li><a href="panasonic.html">Panasonic</a></li>
+                        <li><a href="palaroid.html">Polaroid</a></li>
+                        <li><a href="smartKids.html">Samsung</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Menu</a>
+                    <ul class="menuDropDownMenu">
+                        <li><a href="payment.html">Payment</a></li>
+                        <li><a href="delivery.html">Delivery</a></li>
+                        <li><a href="return.html">Return</a></li>
+                        <li><a href="advices.html">Advices</a></li>
+                        <li><a href="contacts.html">Contacts</a></li>
+                    </ul>
+                </li>
+                <li><a href="aboutUs.html">About us</a></li>
+            </ul>
+        </nav>
+    </form>
+
+    <!-- Footer -->
+    <footer>&copyCoursework<br>Shozda Yuliia</footer>
+    <script src="../js/basic.js"></script>
+</body>
+
+</html>
