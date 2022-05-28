@@ -75,29 +75,121 @@ body {
     cursor: pointer;
 }
 
-.menuDropDownCatalog,
+/* .back {
+    background-color: black;
+    opacity: 50%;
+    width: 95%;
+    height: 10%;
+    position: fixed;
+    top: 0;
+} */
+
 .menuDropDownMenu {
+    display: none;
+    position: fixed;
+    left: 30px;
+    right: 30px;
+    text-align: center;
+}
+
+.menuDropDownMenuDiv {
+    min-width: 80%;
+    height: 150px;
     box-shadow: 2px 2px 10px #969595;
     background-color: white;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    text-align: center;
+    position: relative;
 }
 
-.menuNavbar ul li a {
-    text-align: left;
+.menuDropDownMenuDiv div a {
+    text-align: center;
+    color: black;
+    text-decoration: none;
 }
 
-.menuNavbar li:hover ul {
-    color: rgb(143, 177, 240);
+.menuDropDownMenuDiv div:hover {
+    background-color: CornflowerBlue;
     cursor: pointer;
+    color: white;
+}
+
+.menuIkon {
+    text-align: center;
+    width: 200px;
+    object-fit: cover;
+}
+
+.menuIkonImg {
+    min-width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.menuDropDownCatalog {
+    display: none;
+    position: fixed;
+    left: 30px;
+    text-align: center;
+}
+
+.menuDropDownCatalogDiv {
+    min-width: 500px;
     height: auto;
-    visibility: inherit;
+    box-shadow: 2px 2px 10px #969595;
+    background-color: white;
+    display: flex;
+    justify-content: space-between; 
+    text-align: left;
+    position: relative;
+    align-items: center;
 }
 
-.menuNavbar li ul {
-    height: 0;
-    overflow: hidden;
-    transition: all .5s;
+.menuDropDownCatalogDiv * {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
+.menuDropDownCatalogDiv div li:hover a {
+    background-color: CornflowerBlue;
+    cursor: pointer;
+    color: white;
+}
+
+.menuDropDownCatalogDiv div li a {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+
+}
+
+.menuDropDownCatalogDiv div li {
+    margin: 10px
+ }
+
+.menuDropDownCatalogDiv div li:hover a {
+    background-color: CornflowerBlue;
+    cursor: pointer;
+    color: white;
+}
+
+.brotherImg,
+.canonImg,
+.dellImg,
+.epsonImg,
+.hpImg,
+.kodakImg,
+.kyoceraImg,
+.jetixImg,
+.polaroidImg,
+.samsungImg {
+    margin: 10px;
+    display: none;
+    max-width: 300px;
+}
 
 /* Main foto */
 

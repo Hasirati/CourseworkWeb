@@ -84,33 +84,80 @@
     <form class="menu" id="menu">
         <nav>
             <ul class="menuNavbar">
-                <li><a href="basic.html">Home</a></li>
-                <li><a href="#">Catalog</a>
-                    <ul class="menuDropDownCatalog">
-                        <li><a href="html/brother.html">Brother</a></li>
-                        <li><a href="html/canon.html">Canon</a></li>
-                        <li><a href="html/dell.html">Dell</a></li>
-                        <li><a href="html/epson.html">Epson</a></li>
-                        <li><a href="html/hp.html">HP</a></li>
-                        <li><a href="html/kodak.html">Kodak</a></li>
-                        <li><a href="html/kyocera.html">Kyocera</a></li>
-                        <li><a href="html/panasonic.html">Panasonic</a></li>
-                        <li><a href="html/palaroid.html">Polaroid</a></li>
-                        <li><a href="html/smartKids.html">Samsung</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Menu</a>
-                    <ul class="menuDropDownMenu">
-                        <li><a href="html/payment.html">Payment</a></li>
-                        <li><a href="html/delivery.html">Delivery</a></li>
-                        <li><a href="html/return.html">Return</a></li>
-                        <li><a href="html/advices.html">Advices</a></li>
-                        <li><a href="html/contacts.html">Contacts</a></li>
-                    </ul>
-                </li>
-                <li><a href="html/aboutUs.html">About us</a></li>
+                <li onmouseover=closeMenu()><a href="basic.html" onmouseover=closeCatalog()>Home</a></li>
+                <li onmouseover=closeMenu()><a onmouseover=showCatalog()>Catalog</a></li>
+                <li onmouseover=closeCatalog()><a onmouseover=showMenu()>Menu</a></li>
+                <li onmouseover=closeMenu()><a href="html/aboutUs.html" onmouseover=closeCatalog()>About us</a></li>
             </ul>
         </nav>
+
+    </form>
+
+    <form class="menuDropDownCatalog" id="menuDropDownCatalog" onmouseover=showCatalog() onmouseout=closeCatalog()>
+        <div class="menuDropDownCatalogDiv">
+            <div>
+                <li onmouseover=showImg(1) onmouseout=closeImg(1)><a href="html/brother.html" class=>Brother</a></li>
+                <li onmouseover=showImg(2) onmouseout=closeImg(2)><a href="html/canon.html">Canon</a></li>
+                <li onmouseover=showImg(3) onmouseout=closeImg(3)><a href="html/dell.html">Dell</a></li>
+                <li onmouseover=showImg(4) onmouseout=closeImg(4)><a href="html/epson.html">Epson</a></li>
+                <li onmouseover=showImg(5) onmouseout=closeImg(5)><a href="html/hp.html">HP</a></li>
+                <li onmouseover=showImg(6) onmouseout=closeImg(6)><a href="html/kodak.html">Kodak</a></li>
+                <li onmouseover=showImg(7) onmouseout=closeImg(7)><a href="html/kyocera.html">Kyocera</a></li>
+                <li onmouseover=showImg(8) onmouseout=closeImg(8)><a href="html/panasonic.html">Jetix</a></li>
+                <li onmouseover=showImg(9) onmouseout=closeImg(9)><a href="html/palaroid.html">Polaroid</a></li>
+                <li onmouseover=showImg(10) onmouseout=closeImg(10)><a href="html/smartKids.html">Samsung</a></li>
+            </div>
+            <div>
+                <img src="img/homePrinter.png" class="always" id="always"
+                    style="margin: 10px; max-width: 300px;">
+                <img src="img/Brother/BROTHER HL-1110R.jpg" id="brother" class="brotherImg">
+                <img src="img/Canon/Canon Laser T140.jpg" id="canon" class="canonImg">
+                <img src="img/Dell/Dell B2360Dn Mono.jpg" id="dell" class="dellImg">
+                <img src="img/Epson/EPSON SureColor SC-F501.jpg" id="epson" class="epsonImg">
+                <img src="img/HP/HP Ink Tank 410 with Wi-Fi.jpg" id="hp" class="hpImg">
+                <img src="img/Kodak/Kodak Photo Printer Dock PD450W.jpg" id="kodak" class="kodakImg">
+                <img src="img/Kyocera/Kyocera M2040dn.jpg" id="kyocera" class="kyoceraImg">
+                <img src="img/Jetix/JETIX Mini Printer Student.jpg" id="jetix" class="jetixImg">
+                <img src="img/Polaroid/Polaroid Lab.jpg" id="polaroid" class="polaroidImg"
+                    style="margin: 10px; display: none; max-width: 280px;">
+                <img src="img/Samsung/Samsung Xpress M2070W.jpg" id="samsung" class="samsungImg">
+            </div>
+        </div>
+    </form>
+
+    <form class="menuDropDownMenu" id="menuDropDownMenu" onmouseover=showMenu() onmouseout=closeMenu()>
+        <div class="menuDropDownMenuDiv">
+            <div class="menuIkon">
+                <a href="html/payment.html">
+                    <img src="img/ikon/menuPayment.png" class="menuIkonImg">
+                    <div>Payment</div>
+                </a>
+            </div>
+            <div class="menuIkon">
+                <a href="html/delivery.html">
+                    <img src="img/ikon/menuDelivery.png" class="menuIkonImg">
+                    <div>Delivery</div>
+                </a>
+            </div>
+            <div class="menuIkon">
+                <a href="html/return.html">
+                    <img src="img/ikon/menuReturn.png" class="menuIkonImg" height="1500px">
+                    <div>Return</div>
+                </a>
+            </div>
+            <div class="menuIkon">
+                <a href="html/advices.html">
+                    <img src="img/ikon/menuAdvice.png" class="menuIkonImg">
+                    <div>Advices</div>
+                </a>
+            </div>
+            <div class="menuIkon">
+                <a href="html/contacts.html">
+                    <img src="img/ikon/menuContact.png" class="menuIkonImg">
+                    <div>Contacts</div>
+                </a>
+            </div>
+        </div>
     </form>
 
     <!-- Main foto -->
@@ -119,8 +166,8 @@
     </form>
 
     <!-- Selected printers-->
-    <form class="selectedPrinter">
-        <h1 style="display: none;">Your selected printers</h1>
+    <form class="selectedPrinter" style="display: none;">
+        <h1>Your selected printers</h1>
     </form>
 
     <!-- Content -->
@@ -128,77 +175,77 @@
         <h1>Assortment</h1>
         <form class="contTable">
             <div class="flex-container">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(1)>
-                        <img class="contImg" src="img/Kodak PD450.jpg">
-                    </button>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(1)>
+                    <img class="contImg" src="img/Kodak/Kodak PD450.jpg">
+                </button>
 
                 <li data-key="2">
                     <button type="button" class="butContImg" id="butContImg" onclick=showComponent(2)>
-                        <img class="contImg" src="img/Canon i-Sensys.jpg">
+                        <img class="contImg" src="img/Canon/Canon i-Sensys.jpg">
                     </button>
                 </li>
 
                 <li data-key="3">
                     <button type="button" class="butContImg" id="butContImg" onclick=showComponent(3)>
-                        <img class="contImg" src="img/3D FlashForge.png">
+                        <img class="contImg" src="img/Brother/3D FlashForge.png">
                     </button>
                 </li>
 
                 <li data-key="4">
                     <button type="button" class="butContImg" id="butContImg" onclick=showComponent(4)>
-                        <img class="contImg" src="img/Canon Laser T140.jpg">
+                        <img class="contImg" src="img/Dell/Dell E310dw.jpg">
                     </button>
                 </li>
 
                 <li data-key="5">
                     <button type="button" class="butContImg" id="butContImg" onclick=showComponent(5)>
-                        <img class="contImg" src="img/Canon PIXMA G540.jpg">
+                        <img class="contImg" src="img/Epson/Epson L6490 with Wi-Fi.jpg">
                     </button>
                 </li>
 
                 <li data-key="6">
                     <button type="button" class="butContImg" id="butContImg" onclick=showComponent(6)>
-                        <img class="contImg" src="img/Epson L110.jpg">
+                        <img class="contImg" src="img/HP/HP Laser 135w.jpg">
                     </button>
                 </li>
 
                 <li data-key="7">
                     <button type="button" class="butContImg" id="butContImg" onclick=showComponent(7)>
-                        <img class="contImg" src="img/Epson L222.jpg">
+                        <img class="contImg" src="img/Jetix/JETIX Mini printer Pink.jpg">
                     </button>
                 </li>
 
                 <li data-key="8">
                     <button type="button" class="butContImg" id="butContImg" onclick=showComponent(8)>
-                        <img class="contImg" src="img/Epson L810.jpeg">
+                        <img class="contImg" src="img/Kyocera/Kyocera Ecosys M3040DN.jpg">
                     </button>
                 </li>
 
                 <li data-key="9">
                     <button type="button" class="butContImg" id="butContImg" onclick=showComponent(9)>
-                        <img class="contImg" src="img/HP Laser 135w.jpg">
+                        <img class="contImg" src="img/Polaroid/Polaroid Lab.jpg">
                     </button>
                 </li>
 
                 <li data-key="10">
                     <button type="button" class="butContImg" id="butContImg" onclick=showComponent(10)>
-                        <img class="contImg" src="img/samsung SCX 3405.jpeg">
+                        <img class="contImg" src="img/Samsung/Samsung Xpress M2070W.jpg">
                     </button>
             </div>
         </form>
         <form class="compTable" id="compTable">
             <button type="button" class="overlay" onclick="showContent()"></button>
             <div class="compContent">
-                <img class="compImg" src="img/Kodak PD450.jpg">
+                <img class="compImg" src="img/Kodak/Kodak PD450.jpg">
                 <p class="compTitle">Kodak PD-450</p>
                 <p class="compLine">Print technology: Sublimation color printing</p>
                 <p class="compLine">Maximum paper size: 4х6</p>
                 <p class="compLine">Color print speed, ppm: 11</p>
                 <p class="compLine">Cartridge resource, page: 6</p>
                 <div class="contBut">
-                <button class="contEdit">Edit</button>
-                <button class="contDelete">Delete</button>
-            </div>
+                    <button class="contEdit">Edit</button>
+                    <button class="contDelete">Delete</button>
+                </div>
             </div>
         </form>
     </form>

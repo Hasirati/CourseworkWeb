@@ -84,40 +84,88 @@
     <form class="menu" id="menu">
         <nav>
             <ul class="menuNavbar">
-                <li><a href="../basic.html">Home</a></li>
-                <li><a href="#">Catalog</a>
-                    <ul class="menuDropDownCatalog">
-                        <li><a href="brother.html">Brother</a></li>
-                        <li><a href="canon.html">Canon</a></li>
-                        <li><a href="dell.html">Dell</a></li>
-                        <li><a href="epson.html">Epson</a></li>
-                        <li><a href="hp.html">HP</a></li>
-                        <li><a href="kodak.html">Kodak</a></li>
-                        <li><a href="kyocera.html">Kyocera</a></li>
-                        <li><a href="panasonic.html">Panasonic</a></li>
-                        <li><a href="palaroid.html">Polaroid</a></li>
-                        <li><a href="smartKids.html">Samsung</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Menu</a>
-                    <ul class="menuDropDownMenu">
-                        <li><a href="payment.html">Payment</a></li>
-                        <li><a href="delivery.html">Delivery</a></li>
-                        <li><a href="return.html">Return</a></li>
-                        <li><a href="advices.html">Advices</a></li>
-                        <li><a href="contacts.html">Contacts</a></li>
-                    </ul>
-                </li>
-                <li><a href="aboutUs.html">About us</a></li>
+                <li onmouseover=closeMenu()><a href="../basic.html" onmouseover=closeCatalog()>Home</a></li>
+                <li onmouseover=closeMenu()><a onmouseover=showCatalog()>Catalog</a></li>
+                <li onmouseover=closeCatalog()><a onmouseover=showMenu()>Menu</a></li>
+                <li onmouseover=closeMenu()><a href="../html/aboutUs.html" onmouseover=closeCatalog()>About us</a></li>
             </ul>
         </nav>
+
     </form>
+
+    <form class="menuDropDownCatalog" id="menuDropDownCatalog" onmouseover=showCatalog() onmouseout=closeCatalog()>
+        <div class="menuDropDownCatalogDiv">
+            <div>
+                <li onmouseover=showImg(1) onmouseout=closeImg(1)><a href="../html/brother.html" class=>Brother</a></li>
+                <li onmouseover=showImg(2) onmouseout=closeImg(2)><a href="../html/canon.html">Canon</a></li>
+                <li onmouseover=showImg(3) onmouseout=closeImg(3)><a href="../html/dell.html">Dell</a></li>
+                <li onmouseover=showImg(4) onmouseout=closeImg(4)><a href="../html/epson.html">Epson</a></li>
+                <li onmouseover=showImg(5) onmouseout=closeImg(5)><a href="../html/hp.html">HP</a></li>
+                <li onmouseover=showImg(6) onmouseout=closeImg(6)><a href="../html/kodak.html">Kodak</a></li>
+                <li onmouseover=showImg(7) onmouseout=closeImg(7)><a href="../html/kyocera.html">Kyocera</a></li>
+                <li onmouseover=showImg(8) onmouseout=closeImg(8)><a href="../html/panasonic.html">Jetix</a></li>
+                <li onmouseover=showImg(9) onmouseout=closeImg(9)><a href="../html/palaroid.html">Polaroid</a></li>
+                <li onmouseover=showImg(10) onmouseout=closeImg(10)><a href="../html/smartKids.html">Samsung</a></li>
+            </div>
+            <div>
+                <img src="../img/homePrinter.png" class="always" id="always"
+                    style="margin: 10px; max-width: 300px;">
+                <img src="../img/Brother/BROTHER HL-1110R.jpg" id="brother" class="brotherImg">
+                <img src="../img/Canon/Canon Laser T140.jpg" id="canon" class="canonImg">
+                <img src="../img/Dell/Dell B2360Dn Mono.jpg" id="dell" class="dellImg">
+                <img src="../img/Epson/EPSON SureColor SC-F501.jpg" id="epson" class="epsonImg">
+                <img src="../img/HP/HP Ink Tank 410 with Wi-Fi.jpg" id="hp" class="hpImg">
+                <img src="../img/Kodak/Kodak Photo Printer Dock PD450W.jpg" id="kodak" class="kodakImg">
+                <img src="../img/Kyocera/Kyocera M2040dn.jpg" id="kyocera" class="kyoceraImg">
+                <img src="../img/Jetix/JETIX Mini Printer Student.jpg" id="jetix" class="jetixImg">
+                <img src="../img/Polaroid/Polaroid Lab.jpg" id="polaroid" class="polaroidImg"
+                    style="margin: 10px; display: none; max-width: 280px;">
+                <img src="../img/Samsung/Samsung Xpress M2070W.jpg" id="samsung" class="samsungImg">
+            </div>
+        </div>
+    </form>
+
+    <form class="menuDropDownMenu" id="menuDropDownMenu" onmouseover=showMenu() onmouseout=closeMenu()>
+        <div class="menuDropDownMenuDiv">
+            <div class="menuIkon">
+                <a href="../html/payment.html">
+                    <img src="../img/ikon/menuPayment.png" class="menuIkonImg">
+                    <div>Payment</div>
+                </a>
+            </div>
+            <div class="menuIkon">
+                <a href="../html/delivery.html">
+                    <img src="../img/ikon/menuDelivery.png" class="menuIkonImg">
+                    <div>Delivery</div>
+                </a>
+            </div>
+            <div class="menuIkon">
+                <a href="../html/return.html">
+                    <img src="../img/ikon/menuReturn.png" class="menuIkonImg" height="1500px">
+                    <div>Return</div>
+                </a>
+            </div>
+            <div class="menuIkon">
+                <a href="../html/advices.html">
+                    <img src="../img/ikon/menuAdvice.png" class="menuIkonImg">
+                    <div>Advices</div>
+                </a>
+            </div>
+            <div class="menuIkon">
+                <a href="../html/contacts.html">
+                    <img src="../img/ikon/menuContact.png" class="menuIkonImg">
+                    <div>Contacts</div>
+                </a>
+            </div>
+        </div>
+    </form>
+
 
     <!-- Content -->
     <h1 class="h1">About us</h1>
     <form class="content" style="font-size: large;">
         <h3 class="h3">MyPrinters: a trusted team of print experts</h3>
-        <img src="../img/uboutUs/trustedTeam.jpg" width="400" class="imgRight">
+        <img src="../img/addition/trustedTeam.jpg" width="400" class="imgRight">
 
         <p>We know what a good printer is. And we are ready to help you choose.</p>
         <p>My Printers provides a wide range of options when purchasing printing equipment and alternative printing media. </p>
@@ -127,7 +175,7 @@
         <div style="clear:both"></div>
 
         <h3 class="h3">Only the most proven print products</h3>
-        <img src="../img/uboutUs/qualityPrinting.jpg" width="400" class="imgLeft">
+        <img src="../img/addition/qualityPrinting.jpg" width="400" class="imgLeft">
 
         <p>We have been cooperating with major manufacturers of printers and multifunctional devices for a long time. We have earned their trust by creating excellent conditions for our customers who want to receive high-quality printing.</p>
         <p>This is confirmed by the fact that for many years we have been successfully coping with the role of not only sellers of printing devices, but also offering high quality consumables for them.</p>
@@ -135,7 +183,7 @@
         <div style="clear:both"></div>
 
         <h3 class="h3">Everything you need for work and play</h3>
-        <img src="../img/uboutUs/basePrinters.png" width="400" class="imgRight">
+        <img src="../img/addition/basePrinters.png" width="400" class="imgRight">
 
         <p>We have created a huge database of various inkjet printers that can meet any of your requirements.</p>
         <p>Here are collected both inexpensive offers for study, and professional photo printers and plotters.</p>
@@ -144,7 +192,7 @@
         <div style="clear:both"></div>
 
         <h3 class="h3">Get more out of your printer</h3>
-        <img src="../img/uboutUs/moreForPrinter.jpg" width="400" class="imgLeft">
+        <img src="../img/addition/moreForPrinter.jpg" width="400" class="imgLeft">
 
         <p>We combine the optimal balance of price and quality in our products. 
         <p>Thus, you will get a high level of creation of any images for a reasonable price.</p>
@@ -155,7 +203,7 @@
         <div style="clear:both"></div>
 
         <h3 class="h3">Really high quality service</h3>
-        <img src="../img/uboutUs/service.jpeg" width="400" class="imgRight">
+        <img src="../img/addition/service.jpeg" width="400" class="imgRight">
 
         <p>The main rule of our company is the client above all else. That is why we have created all the conditions for you to find the printing device that you need with maximum comfort, order its delivery and get a ready-made solution for efficient work in any conditions.</p>
         <p>Our couriers will deliver your purchase in the city of Ternopil.</p>
@@ -164,7 +212,7 @@
         <div style="clear:both"></div>
 
         <h3 class="h3">Service assistance</h3>
-        <img src="../img/uboutUs/serviceAssistance.jpg" width="400" class="imgLeft">
+        <img src="../img/addition/serviceAssistance.jpg" width="400" class="imgLeft">
         <p>We help solve problems! You can count on us if you need to install ink supply systems on site. We can also set up the outflow of waste ink from printers to your office or home. This opportunity is relevant for customers in Ternopil. We can also carry out these procedures in our service center for buyers from other cities of Ukraine.</p>
         <p>There is the possibility of a complete installation of the printing device, if you do not have time to carry it out on your own. You get an immediately ready-to-use solution that does not require any waste of time. The professional help of our masters will cost you mere pennies. You can order this service if your office or house is located within the city of Kyiv.</p>
         <p>Our experience and knowledge will make the purchase and maintenance of the printing device and the means to save money for it as comfortable as possible for you.</p>
