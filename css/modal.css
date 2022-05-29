@@ -11,7 +11,7 @@
 .modalWindow {
     margin: auto;
     width: 400px;
-    height: 515px;
+    height: auto;
     background-color: rgb(255, 255, 255);
     border: solid black 2px;
     border-radius: 5px;
@@ -20,11 +20,11 @@
 }
 
 .modal {
-    text-align: center;
     display: none;
 	position: fixed;
 	left: 0;
 	right: 0;
+    top: 1%;
 }
 
 .modalTitle {

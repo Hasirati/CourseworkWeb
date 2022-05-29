@@ -5,78 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRITNERS</title>
+    <title>MY PRITNERS</title>
 
     <link rel="stylesheet" href="css/basis.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="css/component.css">
 </head>
 
 <body>
+    <div class="empty"></div>
     <!-- Header -->
     <form class="Header">
-        <span class="headerFat">MY PRINTERS</span>
-        <button type="button" class="butCreateHeader" onclick=showModal()>
-            Create printer
-        </button>
-        <label for="headerEdit">
-            <input id="headerEdit" class="headerEdit" placeholder="Search your printer">
-        </label>
-        <button class="butSearchHeader">Search</button>
-        <button class="butCancelHeader">Cancel</button>
-    </form>
-
-    <!-- Modal -->
-    <form class="modal" id="modal">
-        <div class="overlay"></div>
-        <div class="modalWindow">
-            <div class="modalHead">
-                <span class="modalTitle">Printer options</span>
-                <button class="butCloseModal">X</button>
-            </div>
-
-            <div class="modalBody">
-                <p>
-                    <label for="name">Printer name<br>
-                        <input id="name" class="modalEdit" placeholder="Enter a name for the printer">
-                    </label>
-                </p>
-                <p>
-                    <label for="size">Maximum paper, size<br>
-                        <select id="size" class="modalEdit">
-                            <option value="A3">A3</option>
-                            <option value="A4">A4</option>
-                            <option value="A5">A5</option>
-                            <option value="A6">A6</option>
-                            <option value="A7">A7</option>
-                            <option value="A8">A8</option>
-                        </select>
-                    </label>
-                </p>
-                <p>
-                    <label for="speed">Print speed, ppm<br>
-                        <input id="speed" class="modalEdit" placeholder="Enter the print speed, ppm">
-                    </label>
-                </p>
-                <p>
-                    <label for="resource">Cartridge resource, page<br>
-                        <input id="resource" class="modalEdit" placeholder="Enter the cartridge resource, page">
-                    </label>
-                </p>
-                <p>
-                    <img id="modalFile" alt="" src=""><br>
-                    <label for="file">Select image files<br>
-                        <input type="file" class="modalEdit" id="file" accept=".png, .jpg, .jpeg"
-                            onchange=showImageInModal(this)>
-                    </label>
-                </p>
-            </div>
-
-            <div class="modalBut">
-                <button class="butConfirmModal">Confirm</button>
-            </div>
+        <div>
+            <span class="headerFat">MY PRINTERS</span>
+            <button type="button" class="butCreateHeader" onclick=showModal()>
+                Create printer
+            </button>
+            <label for="headerEdit">
+                <input type="search" id="headerEdit" class="headerEdit" placeholder="Search your printer">
+            </label>
+            <button class="butSearchHeader" id="butSearchHeader" onclick="search()">Search</button>
+            <button class="butCancelHeader" onclick="rebootSite()">Cancel</button>
         </div>
     </form>
 
@@ -108,8 +58,7 @@
                 <li onmouseover=showImg(10) onmouseout=closeImg(10)><a href="html/smartKids.html">Samsung</a></li>
             </div>
             <div>
-                <img src="img/homePrinter.png" class="always" id="always"
-                    style="margin: 10px; max-width: 300px;">
+                <img src="img/homePrinter.png" class="always" id="always" style="margin: 10px; max-width: 300px;">
                 <img src="img/Brother/BROTHER HL-1110R.jpg" id="brother" class="brotherImg">
                 <img src="img/Canon/Canon Laser T140.jpg" id="canon" class="canonImg">
                 <img src="img/Dell/Dell B2360Dn Mono.jpg" id="dell" class="dellImg">
@@ -160,14 +109,97 @@
         </div>
     </form>
 
+    <!-- Modal -->
+    <form class="modal" id="modal">
+        <div class="overlay"></div>
+        <div class="modalWindow">
+            <div class="modalHead">
+                <span class="modalTitle">Printer options</span>
+                <button class="butCloseModal" onclick="closeModal()">X</button>
+            </div>
+
+            <div class="modalBody">
+                <p>
+                    <label for="name">Printer name<br>
+                        <input id="name" class="modalEdit" placeholder="Enter a name for the printer">
+                    </label>
+                </p>
+                <p>
+                    <label for="size">Maximum paper, size<br>
+                        <select id="size" class="modalEdit">
+                            <option value="A3">A3</option>
+                            <option value="A4">A4</option>
+                            <option value="A5">A5</option>
+                            <option value="A6">A6</option>
+                            <option value="A7">A7</option>
+                            <option value="A8">A8</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label for="speed">Print speed, ppm<br>
+                        <input id="speed" class="modalEdit" placeholder="Enter the print speed, ppm">
+                    </label>
+                </p>
+                <p>
+                    <label for="resource">Cartridge resource, page<br>
+                        <input id="resource" class="modalEdit" placeholder="Enter the cartridge resource, page">
+                    </label>
+                </p>
+                <p>
+                    <label for="price">Price, UAH<br>
+                        <input id="price" class="modalEdit" placeholder="Enter the price printer">
+                    </label>
+                </p>
+                <p>
+                    <img id="modalFile" alt="" src=""><br>
+                    <label for="img">Select image files<br>
+                        <input type="file" class="modalEdit" id="img" accept=".png, .jpg, .jpeg"
+                            onchange=showImageInModal(this)>
+                    </label>
+                </p>
+            </div>
+
+            <div class="modalBut">
+                <button class="butConfirmModal" id="butConfirmModal"
+                    onclick="addElementToLocalStorage()">Confirm</button>
+            </div>
+        </div>
+    </form>
+
     <!-- Main foto -->
     <form class="mainFoto">
         <img src="img/mainFoto.jpg" class="mainFotoImg">
     </form>
 
-    <!-- Selected printers-->
-    <form class="selectedPrinter" style="display: none;">
+    <!-- Selected printers  style="display: none;"-->
+    <form class="selectedPrinter">
         <h1>Your selected printers</h1>
+
+        <div class="manage">
+            <div>
+                <div>Sort ascending by price</div>
+                <label>
+                    <input type="checkbox" class="btnManage" id="sort" onchange="sortByPrice()">
+                </label>
+            </div>
+            <div>
+                <div>Get default element</div>
+                <button class="btnManage" id="btnReboot" onclick="defaultValues()">Get</button>
+            </div>
+            <div>
+                <div><b>Total price:</b> <span id="result"></span></div>
+                <button class="btnManage" id="btnCount" onclick="count()">Count</span></button>
+            </div>
+        </div>
+
+        <div class="displayzone"></div>
+        <!-- <select id="sort"  onchange="sort()">
+                <option value="soryName">Name</option>
+                <option value="sortSpeed">Speed</option>
+                <option value="sortResource">Resource</option>
+                <option value="sortPrice">Price</option>
+            </select> -->
     </form>
 
     <!-- Content -->
@@ -179,72 +211,55 @@
                     <img class="contImg" src="img/Kodak/Kodak PD450.jpg">
                 </button>
 
-                <li data-key="2">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(2)>
-                        <img class="contImg" src="img/Canon/Canon i-Sensys.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(2)>
+                    <img class="contImg" src="img/Canon/Canon i-Sensys.jpg">
+                </button>
 
-                <li data-key="3">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(3)>
-                        <img class="contImg" src="img/Brother/3D FlashForge.png">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(3)>
+                    <img class="contImg" src="img/Brother/3D FlashForge.png">
+                </button>
 
-                <li data-key="4">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(4)>
-                        <img class="contImg" src="img/Dell/Dell E310dw.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(4)>
+                    <img class="contImg" src="img/Dell/Dell E310dw.jpg">
+                </button>
 
-                <li data-key="5">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(5)>
-                        <img class="contImg" src="img/Epson/Epson L6490 with Wi-Fi.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(5)>
+                    <img class="contImg" src="img/Epson/Epson L6490 with Wi-Fi.jpg">
+                </button>
 
-                <li data-key="6">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(6)>
-                        <img class="contImg" src="img/HP/HP Laser 135w.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(6)>
+                    <img class="contImg" src="img/HP/HP Laser 135w.jpg">
+                </button>
 
-                <li data-key="7">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(7)>
-                        <img class="contImg" src="img/Jetix/JETIX Mini printer Pink.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(7)>
+                    <img class="contImg" src="img/Jetix/JETIX Mini printer Pink.jpg">
+                </button>
 
-                <li data-key="8">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(8)>
-                        <img class="contImg" src="img/Kyocera/Kyocera Ecosys M3040DN.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(8)>
+                    <img class="contImg" src="img/Kyocera/Kyocera Ecosys M3040DN.jpg">
+                </button>
 
-                <li data-key="9">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(9)>
-                        <img class="contImg" src="img/Polaroid/Polaroid Lab.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(9)>
+                    <img class="contImg" src="img/Polaroid/Polaroid Lab.jpg">
+                </button>
 
-                <li data-key="10">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(10)>
-                        <img class="contImg" src="img/Samsung/Samsung Xpress M2070W.jpg">
-                    </button>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(10)>
+                    <img class="contImg" src="img/Samsung/Samsung Xpress M2070W.jpg">
+                </button>
             </div>
         </form>
         <form class="compTable" id="compTable">
             <button type="button" class="overlay" onclick="showContent()"></button>
             <div class="compContent">
-                <img class="compImg" src="img/Kodak/Kodak PD450.jpg">
+                <!-- <img class="compImg" src="img/Kyocera/Kyocera M2040dn.jpg">
                 <p class="compTitle">Kodak PD-450</p>
-                <p class="compLine">Print technology: Sublimation color printing</p>
                 <p class="compLine">Maximum paper size: 4х6</p>
                 <p class="compLine">Color print speed, ppm: 11</p>
                 <p class="compLine">Cartridge resource, page: 6</p>
+                <p class="compLine">Price: 1962 UAH</p>
                 <div class="contBut">
-                    <button class="contEdit">Edit</button>
-                    <button class="contDelete">Delete</button>
+                    <button class="butConfirmModal" id="butConfirmModal"
+                        onclick="addElementToLocalStorage()">Confirm</button> -->
                 </div>
             </div>
         </form>
@@ -253,6 +268,8 @@
     <!-- Footer -->
     <footer>&copyCoursework<br>Shozda Yuliia</footer>
     <script src="js/basic.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/audit.js"></script>
 </body>
 
 </html>
