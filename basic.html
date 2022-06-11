@@ -55,7 +55,7 @@
                 <li onmouseover=showImg(7) onmouseout=closeImg(7)><a href="html/kyocera.html">Kyocera</a></li>
                 <li onmouseover=showImg(8) onmouseout=closeImg(8)><a href="html/panasonic.html">Jetix</a></li>
                 <li onmouseover=showImg(9) onmouseout=closeImg(9)><a href="html/palaroid.html">Polaroid</a></li>
-                <li onmouseover=showImg(10) onmouseout=closeImg(10)><a href="html/smartKids.html">Samsung</a></li>
+                <li onmouseover=showImg(10) onmouseout=closeImg(10)><a href="html/samsung.html">Samsung</a></li>
             </div>
             <div>
                 <img src="img/homePrinter.png" class="always" id="always" style="margin: 10px; max-width: 300px;">
@@ -179,15 +179,15 @@
         <div class="manage">
             <div>
                 <div>Sort ascending by price</div>
-                <select  id="sort" class="btnManage" onchange="sortByPrice()">
+                <!-- <select  id="sort" class="btnManage" onchange="sortByPrice()">
                     <option value="sortName">Name</option>
                     <option value="sortSpeed">Speed</option>
                     <option value="sortResource">Resource</option>
                     <option value="sortPrice">Price</option>
-                </select>
-                <!-- <label>
+                </select> -->
+                <label>
                     <input type="checkbox" class="btnManage" id="sort" onchange="sortByPrice()">
-                </label> -->
+                </label>
             </div>
             <div>
                 <div>Get default element</div>
@@ -251,17 +251,13 @@
         </div>
         <div class="compTable" id="compTable">
             <button type="button" class="overlay" onclick="showContent()"></button>
-            <div class="compContent">
-                <img class="compImg" src="img/Kyocera/Kyocera M2040dn.jpg">
+            <div class="compContent" style="margin-top: -1700px;">
+                <img class="compImg" src="img/Kodak/Kodak PD450.jpg">
                 <p class="compTitle">Kodak PD-450</p>
                 <p class="compLine">Maximum paper size: 4х6</p>
                 <p class="compLine">Color print speed, ppm: 11</p>
                 <p class="compLine">Cartridge resource, page: 6</p>
                 <p class="compLine">Price: 1962 UAH</p>
-                <div class="contBut">
-                    <button class="butConfirmModal" id="butConfirmModal"
-                        onclick="addElementToLocalStorage()">Confirm</button>
-                </div>
             </div>
         </div>
     </div>

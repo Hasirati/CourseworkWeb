@@ -15,18 +15,21 @@
 </head>
 
 <body>
+    <div class="empty"></div>
     <!-- Header -->
-    <form class="Header">
-        <span class="headerFat">MY PRINTERS</span>
-        <button type="button" class="butCreateHeader" onclick=showModal()>
-            Create printer
-        </button>
-        <label for="headerEdit">
-            <input id="headerEdit" class="headerEdit" placeholder="Search your printer">
-        </label>
-        <button class="butSearchHeader">Search</button>
-        <button class="butCancelHeader">Cancel</button>
-    </form>
+    <div class="Header">
+        <div>
+            <span class="headerFat">MY PRINTERS</span>
+            <button type="button" class="butCreateHeader" onclick=showModal()>
+                Create printer
+            </button>
+            <label for="headerEdit">
+                <input type="search" id="headerEdit" class="headerEdit" placeholder="Search your printer">
+            </label>
+            <button class="butSearchHeader" id="butSearchHeader" onclick="search()">Search</button>
+            <button class="butCancelHeader" onclick="rebootSite()">Cancel</button>
+        </div>
+    </div>
 
     <!-- Modal -->
     <form class="modal" id="modal">
@@ -103,9 +106,9 @@
                 <li onmouseover=showImg(5) onmouseout=closeImg(5)><a href="../html/hp.html">HP</a></li>
                 <li onmouseover=showImg(6) onmouseout=closeImg(6)><a href="../html/kodak.html">Kodak</a></li>
                 <li onmouseover=showImg(7) onmouseout=closeImg(7)><a href="../html/kyocera.html">Kyocera</a></li>
-                <li onmouseover=showImg(8) onmouseout=closeImg(8)><a href="../html/panasonic.html">Jetix</a></li>
+                <li onmouseover=showImg(8) onmouseout=closeImg(8)><a href="../html/jetix.html">Jetix</a></li>
                 <li onmouseover=showImg(9) onmouseout=closeImg(9)><a href="../html/palaroid.html">Polaroid</a></li>
-                <li onmouseover=showImg(10) onmouseout=closeImg(10)><a href="../html/smartKids.html">Samsung</a></li>
+                <li onmouseover=showImg(10) onmouseout=closeImg(10)><a href="../html/samsung.html">Samsung</a></li>
             </div>
             <div>
                 <img src="../img/homePrinter.png" class="always" id="always"

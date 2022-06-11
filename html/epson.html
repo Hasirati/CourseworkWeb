@@ -14,21 +14,24 @@
 </head>
 
 <body>
+    <div class="empty"></div>
     <!-- Header -->
-    <form class="Header">
-        <span class="headerFat">MY PRINTERS</span>
-        <button type="button" class="butCreateHeader" onclick=showModal()>
-            Create printer
-        </button>
-        <label for="headerEdit">
-            <input id="headerEdit" class="headerEdit" placeholder="Search your printer">
-        </label>
-        <button class="butSearchHeader">Search</button>
-        <button class="butCancelHeader">Cancel</button>
-    </form>
+    <div class="Header">
+        <div>
+            <span class="headerFat">MY PRINTERS</span>
+            <button type="button" class="butCreateHeader" onclick=showModal()>
+                Create printer
+            </button>
+            <label for="headerEdit">
+                <input type="search" id="headerEdit" class="headerEdit" placeholder="Search your printer">
+            </label>
+            <button class="butSearchHeader" id="butSearchHeader" onclick="search()">Search</button>
+            <button class="butCancelHeader" onclick="rebootSite()">Cancel</button>
+        </div>
+    </div>
 
     <!-- Modal -->
-    <form class="modal" id="modal">
+    <div class="modal" id="modal">
         <div class="overlay"></div>
         <div class="modalWindow">
             <div class="modalHead">
@@ -77,10 +80,10 @@
                 <button class="butConfirmModal">Confirm</button>
             </div>
         </div>
-    </form>
+    </div>
 
     <!-- Menu -->
-    <form class="menu" id="menu">
+    <div class="menu" id="menu">
         <nav>
             <ul class="menuNavbar">
                 <li onmouseover=closeMenu()><a href="../basic.html" onmouseover=closeCatalog()>Home</a></li>
@@ -90,9 +93,9 @@
             </ul>
         </nav>
 
-    </form>
+    </div>
 
-    <form class="menuDropDownCatalog" id="menuDropDownCatalog" onmouseover=showCatalog() onmouseout=closeCatalog()>
+    <div class="menuDropDownCatalog" id="menuDropDownCatalog" onmouseover=showCatalog() onmouseout=closeCatalog()>
         <div class="menuDropDownCatalogDiv">
             <div>
                 <li onmouseover=showImg(1) onmouseout=closeImg(1)><a href="../html/brother.html" class=>Brother</a></li>
@@ -102,13 +105,12 @@
                 <li onmouseover=showImg(5) onmouseout=closeImg(5)><a href="../html/hp.html">HP</a></li>
                 <li onmouseover=showImg(6) onmouseout=closeImg(6)><a href="../html/kodak.html">Kodak</a></li>
                 <li onmouseover=showImg(7) onmouseout=closeImg(7)><a href="../html/kyocera.html">Kyocera</a></li>
-                <li onmouseover=showImg(8) onmouseout=closeImg(8)><a href="../html/panasonic.html">Jetix</a></li>
+                <li onmouseover=showImg(8) onmouseout=closeImg(8)><a href="../html/jetix.html">Jetix</a></li>
                 <li onmouseover=showImg(9) onmouseout=closeImg(9)><a href="../html/palaroid.html">Polaroid</a></li>
-                <li onmouseover=showImg(10) onmouseout=closeImg(10)><a href="../html/smartKids.html">Samsung</a></li>
+                <li onmouseover=showImg(10) onmouseout=closeImg(10)><a href="../html/samsung.html">Samsung</a></li>
             </div>
             <div>
-                <img src="../img/homePrinter.png" class="always" id="always"
-                    style="margin: 10px; max-width: 300px;">
+                <img src="../img/homePrinter.png" class="always" id="always" style="margin: 10px; max-width: 300px;">
                 <img src="../img/Brother/BROTHER HL-1110R.jpg" id="brother" class="brotherImg">
                 <img src="../img/Canon/Canon Laser T140.jpg" id="canon" class="canonImg">
                 <img src="../img/Dell/Dell B2360Dn Mono.jpg" id="dell" class="dellImg">
@@ -122,9 +124,9 @@
                 <img src="../img/Samsung/Samsung Xpress M2070W.jpg" id="samsung" class="samsungImg">
             </div>
         </div>
-    </form>
+    </div>
 
-    <form class="menuDropDownMenu" id="menuDropDownMenu" onmouseover=showMenu() onmouseout=closeMenu()>
+    <div class="menuDropDownMenu" id="menuDropDownMenu" onmouseover=showMenu() onmouseout=closeMenu()>
         <div class="menuDropDownMenuDiv">
             <div class="menuIkon">
                 <a href="../html/payment.html">
@@ -157,91 +159,72 @@
                 </a>
             </div>
         </div>
-    </form>
+    </div>
 
     <!-- Content -->
-    <form>
-        <h1>Assortment</h1>
-        <form class="contTable">
+    <div>
+        <h1 class="h1">Epson</h1>
+        <div class="contTable">
             <div class="flex-container">
                 <button type="button" class="butContImg" id="butContImg" onclick=showComponent(1)>
-                    <img class="contImg" src="img/Kodak PD450.jpg">
+                    <img class="contImg" src="../img/Epson/Epson L110.jpg">
                 </button>
 
-                <li data-key="2">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(2)>
-                        <img class="contImg" src="img/Canon i-Sensys.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(2)>
+                    <img class="contImg" src="../img/Epson/Epson L1300.jpg">
+                </button>
 
-                <li data-key="3">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(3)>
-                        <img class="contImg" src="img/3D FlashForge.png">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(3)>
+                    <img class="contImg" src="../img/Epson/Epson L222.jpg">
+                </button>
 
-                <li data-key="4">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(4)>
-                        <img class="contImg" src="img/Canon Laser T140.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(4)>
+                    <img class="contImg" src="../img/Epson/Epson L300.jpg">
+                </button>
 
-                <li data-key="5">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(5)>
-                        <img class="contImg" src="img/Canon PIXMA G540.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(5)>
+                    <img class="contImg" src="../img/Epson/Epson L3156.jpg">
+                </button>
 
-                <li data-key="6">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(6)>
-                        <img class="contImg" src="img/Epson L110.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(6)>
+                    <img class="contImg" src="../img/Epson/Epson L6490 with Wi-Fi.jpg">
+                </button>
 
-                <li data-key="7">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(7)>
-                        <img class="contImg" src="img/Epson L222.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(7)>
+                    <img class="contImg" src="../img/Epson/Epson L6550 A4 with Wi-Fi.jpg">
+                </button>
 
-                <li data-key="8">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(8)>
-                        <img class="contImg" src="img/Epson L810.jpeg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(8)>
+                    <img class="contImg" src="../img/Epson/Epson L810.jpeg">
+                </button>
 
-                <li data-key="9">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(9)>
-                        <img class="contImg" src="img/HP Laser 135w.jpg">
-                    </button>
-                </li>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(9)>
+                    <img class="contImg" src="../img/Epson/Epson M15140.jpg">
+                </button>
 
-                <li data-key="10">
-                    <button type="button" class="butContImg" id="butContImg" onclick=showComponent(10)>
-                        <img class="contImg" src="img/samsung SCX 3405.jpeg">
-                    </button>
+                <button type="button" class="butContImg" id="butContImg" onclick=showComponent(10)>
+                    <img class="contImg" src="../img/Epson/EPSON SureColor SC-F501.jpg">
+                </button>
             </div>
-        </form>
-        <form class="compTable" id="compTable">
+        </div>
+        <div class="compTable" id="compTable">
             <button type="button" class="overlay" onclick="showContent()"></button>
-            <div class="compContent">
-                <img class="compImg" src="img/Kodak PD450.jpg">
-                <p class="compTitle">Kodak PD-450</p>
-                <p class="compLine">Print technology: Sublimation color printing</p>
-                <p class="compLine">Maximum paper size: 4х6</p>
-                <p class="compLine">Color print speed, ppm: 11</p>
-                <p class="compLine">Cartridge resource, page: 6</p>
-                <div class="contBut">
-                    <button class="contEdit">Edit</button>
-                    <button class="contDelete">Delete</button>
-                </div>
+            <div class="compContent" style="margin-top: -500px;">
+                <img class="compImg" src="../img/Epson/Epson L1300.jpg">
+                <p class="compTitle">Epson L1300</p>
+                <p class="compLine">Maximum paper size: A4</p>
+                <p class="compLine">Color print speed, ppm: 12</p>
+                <p class="compLine">Cartridge resource, page: 670</p>
+                <p class="compLine">Price: 13699 UAH</p>
             </div>
-        </form>
-    </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>&copyCoursework<br>Shozda Yuliia</footer>
     <script src="../js/basic.js"></script>
+    <script src="../js/localStorage.js"></script>
+    <script src="../js/audit.js"></script>
 </body>
 
 </html>
