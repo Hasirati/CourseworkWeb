@@ -16,7 +16,7 @@
 <body>
     <div class="empty"></div>
     <!-- Header -->
-    <form class="Header">
+    <div class="Header">
         <div>
             <span class="headerFat">MY PRINTERS</span>
             <button type="button" class="butCreateHeader" onclick=showModal()>
@@ -28,10 +28,10 @@
             <button class="butSearchHeader" id="butSearchHeader" onclick="search()">Search</button>
             <button class="butCancelHeader" onclick="rebootSite()">Cancel</button>
         </div>
-    </form>
+    </div>
 
     <!-- Menu -->
-    <form class="menu" id="menu">
+    <div class="menu" id="menu">
         <nav>
             <ul class="menuNavbar">
                 <li onmouseover=closeMenu()><a href="basic.html" onmouseover=closeCatalog()>Home</a></li>
@@ -41,9 +41,9 @@
             </ul>
         </nav>
 
-    </form>
+    </div>
 
-    <form class="menuDropDownCatalog" id="menuDropDownCatalog" onmouseover=showCatalog() onmouseout=closeCatalog()>
+    <div class="menuDropDownCatalog" id="menuDropDownCatalog" onmouseover=showCatalog() onmouseout=closeCatalog()>
         <div class="menuDropDownCatalogDiv">
             <div>
                 <li onmouseover=showImg(1) onmouseout=closeImg(1)><a href="html/brother.html" class=>Brother</a></li>
@@ -72,9 +72,9 @@
                 <img src="img/Samsung/Samsung Xpress M2070W.jpg" id="samsung" class="samsungImg">
             </div>
         </div>
-    </form>
+    </div>
 
-    <form class="menuDropDownMenu" id="menuDropDownMenu" onmouseover=showMenu() onmouseout=closeMenu()>
+    <div class="menuDropDownMenu" id="menuDropDownMenu" onmouseover=showMenu() onmouseout=closeMenu()>
         <div class="menuDropDownMenuDiv">
             <div class="menuIkon">
                 <a href="html/payment.html">
@@ -107,10 +107,10 @@
                 </a>
             </div>
         </div>
-    </form>
+    </div>
 
     <!-- Modal -->
-    <form class="modal" id="modal">
+    <div class="modal" id="modal">
         <div class="overlay"></div>
         <div class="modalWindow">
             <div class="modalHead">
@@ -165,23 +165,29 @@
                     onclick="addElementToLocalStorage()">Confirm</button>
             </div>
         </div>
-    </form>
+    </div>
 
     <!-- Main foto -->
-    <form class="mainFoto">
+    <div class="mainFoto">
         <img src="img/mainFoto.jpg" class="mainFotoImg">
-    </form>
+    </div>
 
     <!-- Selected printers  style="display: none;"-->
-    <form class="selectedPrinter">
+    <div class="selectedPrinter">
         <h1>Your selected printers</h1>
 
         <div class="manage">
             <div>
                 <div>Sort ascending by price</div>
-                <label>
+                <select  id="sort" class="btnManage" onchange="sortByPrice()">
+                    <option value="sortName">Name</option>
+                    <option value="sortSpeed">Speed</option>
+                    <option value="sortResource">Resource</option>
+                    <option value="sortPrice">Price</option>
+                </select>
+                <!-- <label>
                     <input type="checkbox" class="btnManage" id="sort" onchange="sortByPrice()">
-                </label>
+                </label> -->
             </div>
             <div>
                 <div>Get default element</div>
@@ -194,18 +200,13 @@
         </div>
 
         <div class="displayzone"></div>
-        <!-- <select id="sort"  onchange="sort()">
-                <option value="soryName">Name</option>
-                <option value="sortSpeed">Speed</option>
-                <option value="sortResource">Resource</option>
-                <option value="sortPrice">Price</option>
-            </select> -->
-    </form>
+
+    </div>
 
     <!-- Content -->
-    <form>
+    <div>
         <h1>Assortment</h1>
-        <form class="contTable">
+        <div class="contTable">
             <div class="flex-container">
                 <button type="button" class="butContImg" id="butContImg" onclick=showComponent(1)>
                     <img class="contImg" src="img/Kodak/Kodak PD450.jpg">
@@ -247,11 +248,11 @@
                     <img class="contImg" src="img/Samsung/Samsung Xpress M2070W.jpg">
                 </button>
             </div>
-        </form>
-        <form class="compTable" id="compTable">
+        </div>
+        <div class="compTable" id="compTable">
             <button type="button" class="overlay" onclick="showContent()"></button>
             <div class="compContent">
-                <!-- <img class="compImg" src="img/Kyocera/Kyocera M2040dn.jpg">
+                <img class="compImg" src="img/Kyocera/Kyocera M2040dn.jpg">
                 <p class="compTitle">Kodak PD-450</p>
                 <p class="compLine">Maximum paper size: 4х6</p>
                 <p class="compLine">Color print speed, ppm: 11</p>
@@ -259,11 +260,11 @@
                 <p class="compLine">Price: 1962 UAH</p>
                 <div class="contBut">
                     <button class="butConfirmModal" id="butConfirmModal"
-                        onclick="addElementToLocalStorage()">Confirm</button> -->
+                        onclick="addElementToLocalStorage()">Confirm</button>
                 </div>
             </div>
-        </form>
-    </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>&copyCoursework<br>Shozda Yuliia</footer>

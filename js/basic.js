@@ -17,7 +17,7 @@ function search() {
         let elemSp = item.speed;
         let elemRes = item.resource;
         let elemP = item.price;
-        if (checkValueSearch.test(elemN) || checkValueSearch.test(elemT) || checkValueSearch.test(elemSiz) || checkValueSearch.test(elemSp) || checkValueSearch.test(elemRes) || checkValueSearch.test(elemP)) {
+        if (checkValueSearch.test(elemN) || checkValueSearch.test(elemSiz) || checkValueSearch.test(elemSp) || checkValueSearch.test(elemRes) || checkValueSearch.test(elemP)) {
             buildElementToPage(item.id, item);
             isFounded = true;
         }
@@ -55,7 +55,7 @@ function buildElementToPage(id, elem) {
             <p class="compLine">Cartridge resource, page: <span>${elem.resource }</span> </p>
             <p class="compLine">Price, UAH: <span>${elem.price}</span> </p>
             <div class="contBut">
-                 <button id="editElement" class="contEdit" onclick="showModal()">Edit</button><span> </span>
+                 <button id="editElement" class="contEdit" onclick="modifyToEdit(${id})">Edit</button><span> </span>
                  <button id="deleteElement" class="contDelete" onclick="deleteElement(${id})">Delete</button>
             </div>
         </div>`);
@@ -71,18 +71,18 @@ for (let k = 0; k < keyNumbers; k++) {
 
 // сортування по ціні
 function sortByPrice() {
-    let checkBox = document.getElementById("sort");
-    if (checkBox.checked == true) {
+    let checkBox = document.getElementById("sort").value;
+    if (checkBox === "Price") {
         let sortArr = getArrayFromStorage()
 
         function byField(field) {
             return (a, b) => +a[field] > +b[field] ? 1 : -1;
         }
         // параметр для сортування
-        sortArr.sort(byField('price'));
+        sortArr.sort(byField(checkBox));
         document.getElementsByClassName("displayzone")[0].innerHTML = ''
         for (let n = 0; n < sortArr.length; n++) {
-            let temp = sortArr[n]
+            let temp = sortArr[n];
             buildElementToPage(temp.id, temp)
         }
     } else {
@@ -215,23 +215,6 @@ function closeImg(key) {
 // Content
 function showContent() {
     document.getElementById("compTable").style.display = "none";
-}
-
-function buildElementToPage(id, elem) {
-    const element = document.createElement('div');
-    element.classList.add('element');
-    element.insertAdjacentHTML('afterbegin', `
-            <img src="img/${elem.img}" class="compImg">
-            <p class="compTitle">${elem.name}</p>
-            <p class="compLine">Maximum paper size: <span>${elem.size}</span> </p>
-            <p class="compLine">Color print speed, ppm: <span>${elem.speed}</span> </p>
-            <p class="compLine">Cartridge resource, page: <span>${elem.resource }</span> </p>
-            <p class="compLine">Price, UAH: <span>${elem.price}</span> </p>
-            <div class="contBut">
-            <button class="butConfirmModal" id="butConfirmModal"
-            onclick="addElementToLocalStorage()">Confirm</button>
-            </div>`);
-    document.getElementsByClassName("compContent")[0].appendChild(element);
 }
 
 function showComponent(key) {
