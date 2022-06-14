@@ -71,22 +71,21 @@ for (let k = 0; k < keyNumbers; k++) {
 
 // сортування по ціні
 function sortByPrice() {
-    let checkBox = document.getElementById("sort").value;
-    if (checkBox === "Price") {
-        let sortArr = getArrayFromStorage()
 
-        function byField(field) {
-            return (a, b) => +a[field] > +b[field] ? 1 : -1;
-        }
-        // параметр для сортування
-        sortArr.sort(byField(checkBox));
-        document.getElementsByClassName("displayzone")[0].innerHTML = ''
-        for (let n = 0; n < sortArr.length; n++) {
-            let temp = sortArr[n];
-            buildElementToPage(temp.id, temp)
-        }
-    } else {
-        setTimeout(location.reload(), 1000)
+    selectElement = document.querySelector('#sort');
+
+    let sortArr = getArrayFromStorage()
+
+    function byField(field) {
+        return (a, b) => +a[field] > +b[field] ? 1 : -1;
+    }
+    // параметр для сортування
+    output = selectElement.value;
+    sortArr.sort(byField(output));
+    document.getElementsByClassName("displayzone")[0].innerHTML = ''
+    for (let n = 0; n < sortArr.length; n++) {
+        let temp = sortArr[n];
+        buildElementToPage(temp.id, temp)
     }
 }
 
